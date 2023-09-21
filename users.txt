@@ -1,4 +1,0 @@
-0,John,john1,John Wick,123,Passport,123,123,2022,-14,0,7,10,1,1,1
-1,Henry,henry1,henry cavil,123,CitizenID,123,123,2022,16,1,10,10,1,1,2
-2,Harry,harry1,Harry Potter,123,CitizenID,123,123,2000,34,2,0,10,1,1,0
-3,Tom,tom1,Tom Cruise,123,CitizenID,123,123,2020,20,3,0,10,1,0,-1
