@@ -328,79 +328,80 @@ int main()
 						{
 							cout << "Enter the ID to request that bike: ";
 							cin >> requestChoice;
-							if (requestChoice < 0 || requestChoice > count)
-							{
-								cout << "Enter valid count number: ";
-								cin >> requestChoice;
-									
-							}
 							Motorbike bike = motorbikeData.getMotorBikeByID(requestChoice);
-							tm startTime, endTime;
-
-							cout << "Enter start time components:" << endl;
-							cout << "Year: ";
-							cin >> startTime.tm_year;
-							while (startTime.tm_year < 2000 || startTime.tm_year > 2023)
+							if (bike.getID() == -1)
 							{
-								cout << "Enter year (2000-2023): ";
+								cout << "Bike with the given ID doesn't exist." << endl;
+							}
+							else
+							{
+								tm startTime, endTime;
+
+								cout << "Enter start time components:" << endl;
+								cout << "Year: ";
 								cin >> startTime.tm_year;
-							}
-							cout << "Month (1-12): ";
-							cin >> startTime.tm_mon; 
-							while (startTime.tm_mon < 1 || startTime.tm_mon > 12) 
-							{
-								cout << "Invalid month. Enter a month between 1 and 12: ";
+								while (startTime.tm_year < 2000 || startTime.tm_year > 2023)
+								{
+									cout << "Enter year (2000-2023): ";
+									cin >> startTime.tm_year;
+								}
+								cout << "Month (1-12): ";
 								cin >> startTime.tm_mon;
-							}
-							cout << "Day of the month: ";
-							cin >> startTime.tm_mday;
-							while (startTime.tm_mday < 1 || startTime.tm_mday > 31) {
-								cout << "Invalid day. Enter a day between 1 and 31: ";
+								while (startTime.tm_mon < 1 || startTime.tm_mon > 12)
+								{
+									cout << "Invalid month. Enter a month between 1 and 12: ";
+									cin >> startTime.tm_mon;
+								}
+								cout << "Day of the month: ";
 								cin >> startTime.tm_mday;
-							}
+								while (startTime.tm_mday < 1 || startTime.tm_mday > 31) {
+									cout << "Invalid day. Enter a day between 1 and 31: ";
+									cin >> startTime.tm_mday;
+								}
 
-							cout << "Enter end time components:" << endl;
-							cout << "Year: ";
-							cin >> endTime.tm_year;
-							while (endTime.tm_year < 2000 || endTime.tm_year > 2023)
-							{
-								cout << "Enter year (2000-2023): ";
+								cout << "Enter end time components:" << endl;
+								cout << "Year: ";
 								cin >> endTime.tm_year;
-							}
-							cout << "Month (1-12): ";
-							cin >> endTime.tm_mon;
-							while (endTime.tm_mon < 1 || endTime.tm_mon > 12)
-							{
-								cout << "Invalid month. Enter a month between 1 and 12: ";
+								while (endTime.tm_year < 2000 || endTime.tm_year > 2023)
+								{
+									cout << "Enter year (2000-2023): ";
+									cin >> endTime.tm_year;
+								}
+								cout << "Month (1-12): ";
 								cin >> endTime.tm_mon;
-							}
-							cout << "Day of the month: ";
-							cin >> endTime.tm_mday;
-							while (endTime.tm_mday < 1 || endTime.tm_mday > 31) {
-								cout << "Invalid day. Enter a day between 1 and 31: ";
+								while (endTime.tm_mon < 1 || endTime.tm_mon > 12)
+								{
+									cout << "Invalid month. Enter a month between 1 and 12: ";
+									cin >> endTime.tm_mon;
+								}
+								cout << "Day of the month: ";
 								cin >> endTime.tm_mday;
-							}
-							
-							// Initiates rental request and update the bike data accordingly
+								while (endTime.tm_mday < 1 || endTime.tm_mday > 31) {
+									cout << "Invalid day. Enter a day between 1 and 31: ";
+									cin >> endTime.tm_mday;
+								}
 
-							RentalRequest rr(
-								user.getID(),
-								user.getUsername(),
-								userData.getUserByID(bike.getOwnerID()).getUsername(),
-								bike.getOwnerID(),
-								bike.getModel(),
-								startTime,
-								endTime
-							);
-							bike.addRentalRequest(
-								user.getID(),
-								user.getUsername(),
-								startTime,
-								endTime
-							);
-							requestsData.addRequest(rr);
-							motorbikeData.updateBike(bike);
-							cout << "Request submitted successfully!" << endl;
+								// Initiates rental request and update the bike data accordingly
+
+								RentalRequest rr(
+									user.getID(),
+									user.getUsername(),
+									userData.getUserByID(bike.getOwnerID()).getUsername(),
+									bike.getOwnerID(),
+									bike.getModel(),
+									startTime,
+									endTime
+								);
+								bike.addRentalRequest(
+									user.getID(),
+									user.getUsername(),
+									startTime,
+									endTime
+								);
+								requestsData.addRequest(rr);
+								motorbikeData.updateBike(bike);
+								cout << "Request submitted successfully!" << endl;
+							}
 						}
 					}
 					else if (userChoice == 7)
@@ -466,76 +467,77 @@ int main()
 						{
 							cout << "Enter the ID to request that bike: ";
 							cin >> requestChoice;
-							if (requestChoice < 0 || requestChoice > count)
-							{
-								cout << "Enter valid count number: ";
-								cin >> requestChoice;
-
-							}
 							Motorbike bike = motorbikeData.getMotorBikeByID(requestChoice);
-							tm startTime, endTime;
-
-							cout << "Enter start time components:" << endl;
-							cout << "Year: ";
-							cin >> startTime.tm_year;
-							while (startTime.tm_year < 2000 || startTime.tm_year > 2023)
+							if (bike.getID() == -1)
 							{
-								cout << "Enter year (2000-2023): ";
+								cout << "Bike with the given ID doesn't exist." << endl;
+							}
+							else
+							{
+								tm startTime, endTime;
+
+								cout << "Enter start time components:" << endl;
+								cout << "Year: ";
 								cin >> startTime.tm_year;
-							}
-							cout << "Month (1-12): ";
-							cin >> startTime.tm_mon;
-							while (startTime.tm_mon < 1 || startTime.tm_mon > 12)
-							{
-								cout << "Invalid month. Enter a month between 1 and 12: ";
+								while (startTime.tm_year < 2000 || startTime.tm_year > 2023)
+								{
+									cout << "Enter year (2000-2023): ";
+									cin >> startTime.tm_year;
+								}
+								cout << "Month (1-12): ";
 								cin >> startTime.tm_mon;
-							}
-							cout << "Day of the month: ";
-							cin >> startTime.tm_mday;
-							while (startTime.tm_mday < 1 || startTime.tm_mday > 31) {
-								cout << "Invalid day. Enter a day between 1 and 31: ";
+								while (startTime.tm_mon < 1 || startTime.tm_mon > 12)
+								{
+									cout << "Invalid month. Enter a month between 1 and 12: ";
+									cin >> startTime.tm_mon;
+								}
+								cout << "Day of the month: ";
 								cin >> startTime.tm_mday;
-							}
+								while (startTime.tm_mday < 1 || startTime.tm_mday > 31) {
+									cout << "Invalid day. Enter a day between 1 and 31: ";
+									cin >> startTime.tm_mday;
+								}
 
-							cout << "Enter end time components:" << endl;
-							cout << "Year: ";
-							cin >> endTime.tm_year;
-							while (endTime.tm_year < 2000 || endTime.tm_year > 2023)
-							{
-								cout << "Enter year (2000-2023): ";
+								cout << "Enter end time components:" << endl;
+								cout << "Year: ";
 								cin >> endTime.tm_year;
-							}
-							cout << "Month (1-12): ";
-							cin >> endTime.tm_mon;
-							while (endTime.tm_mon < 1 || endTime.tm_mon > 12)
-							{
-								cout << "Invalid month. Enter a month between 1 and 12: ";
+								while (endTime.tm_year < 2000 || endTime.tm_year > 2023)
+								{
+									cout << "Enter year (2000-2023): ";
+									cin >> endTime.tm_year;
+								}
+								cout << "Month (1-12): ";
 								cin >> endTime.tm_mon;
-							}
-							cout << "Day of the month: ";
-							cin >> endTime.tm_mday;
-							while (endTime.tm_mday < 1 || endTime.tm_mday > 31) {
-								cout << "Invalid day. Enter a day between 1 and 31: ";
+								while (endTime.tm_mon < 1 || endTime.tm_mon > 12)
+								{
+									cout << "Invalid month. Enter a month between 1 and 12: ";
+									cin >> endTime.tm_mon;
+								}
+								cout << "Day of the month: ";
 								cin >> endTime.tm_mday;
+								while (endTime.tm_mday < 1 || endTime.tm_mday > 31) {
+									cout << "Invalid day. Enter a day between 1 and 31: ";
+									cin >> endTime.tm_mday;
+								}
+								RentalRequest rr(
+									user.getID(),
+									user.getUsername(),
+									userData.getUserByID(bike.getOwnerID()).getUsername(),
+									bike.getOwnerID(),
+									bike.getModel(),
+									startTime,
+									endTime
+								);
+								bike.addRentalRequest(
+									user.getID(),
+									user.getUsername(),
+									startTime,
+									endTime
+								);
+								requestsData.addRequest(rr);
+								motorbikeData.updateBike(bike);
+								cout << "Request submitted successfully!" << endl;
 							}
-							RentalRequest rr(
-								user.getID(),
-								user.getUsername(),
-								userData.getUserByID(bike.getOwnerID()).getUsername(),
-								bike.getOwnerID(),
-								bike.getModel(),
-								startTime,
-								endTime
-							);
-							bike.addRentalRequest(
-								user.getID(),
-								user.getUsername(),
-								startTime,
-								endTime
-							);
-							requestsData.addRequest(rr);
-							motorbikeData.updateBike(bike);
-							cout << "Request submitted successfully!" << endl;
 						}
 					}
 					else if (userChoice == 10)
