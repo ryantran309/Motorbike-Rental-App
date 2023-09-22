@@ -1,0 +1,2 @@
+2,2001,Vision,2000,M,2018,Good Bike it is.,2,7,0,0,Ha Noi,2
+3,2000,Yamaha,2002,A,201,Nice bike.,4,6,0,1,Sai Gon,3
