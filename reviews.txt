@@ -1,4 +1,0 @@
-0,Henry,John,8,Good ride!
-1,John,Henry,10,Good Bike.
-0,Harry,John,6,Average ride.
-1,Tom,Henry,10,Good
